@@ -6,7 +6,6 @@ using Login.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
 var configuration = builder.Configuration;
 
 builder.Services.AddDbContext<LoginContext>(options => options.UseSqlite(configuration.GetConnectionString("sqlite")));
@@ -17,11 +16,10 @@ builder.Services.AddScoped<GetUserByUsernameUseCase>();
 builder.Services.AddScoped<CreateUserUseCase>();
 builder.Services.AddScoped<GetUsersUseCase>();
 builder.Services.AddScoped<LoginUseCase>();
-builder.Services.AddControllers();
 
+builder.Services.AddControllers();
 builder.Services.AddSwagger();
 builder.Services.AddAuth(configuration);
-builder.Services.AddAuthentication();
 
 var app = builder.Build();
 
