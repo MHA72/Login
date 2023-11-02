@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b21f277-4d8f-4656-88b0-fa3f4aa0fc23" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Login/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Controllers/UserController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8315e670e046c0ebe36758d070aca06969b6edcb165895cc188daab9c6321eb7/UserLoginInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{

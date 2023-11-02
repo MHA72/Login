@@ -1,6 +1,7 @@
 ﻿using Login.Application;
 using Login.Dtos.Requests;
 using Login.Dtos.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Login.Controllers;
@@ -19,6 +20,7 @@ public class UserController : Controller
     }
 
     [HttpGet("")]
+    [Authorize]
     public async Task<ActionResult<GetUsersResponse>> Do([FromQuery] QueryParameter parameter, CancellationToken cancellationToken)
     {
         var (users, total) = await _getUsersUseCase.Get(parameter, cancellationToken);
