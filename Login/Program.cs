@@ -13,11 +13,14 @@ builder.Services.AddDbContext<LoginContext>(options => options.UseSqlite(configu
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+builder.Services.AddScoped<GetUserByUsernameUseCase>();
 builder.Services.AddScoped<CreateUserUseCase>();
 builder.Services.AddScoped<GetUsersUseCase>();
+builder.Services.AddScoped<LoginUseCase>();
 builder.Services.AddControllers();
 
 builder.Services.AddSwagger();
+builder.Services.AddAuth(configuration);
 builder.Services.AddAuthentication();
 
 var app = builder.Build();
@@ -31,6 +34,8 @@ using (var scope = app.Services.CreateScope())
 app.UseSwagger();
 app.UseSwaggerUI(options => { options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"); });
 
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
