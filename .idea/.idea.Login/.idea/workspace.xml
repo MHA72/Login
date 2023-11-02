@@ -5,15 +5,15 @@
     <projectFile profileName="http">Login/Login.csproj</projectFile>
     <projectFile profileName="https">Login/Login.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1b21f277-4d8f-4656-88b0-fa3f4aa0fc23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/Login.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Login/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Login/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Login.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Login.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2Xc1egGgFpeZ9fHa8WrfaLMvRoZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,6 +43,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
