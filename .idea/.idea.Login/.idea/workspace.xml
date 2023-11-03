@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b21f277-4d8f-4656-88b0-fa3f4aa0fc23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Login/IRepositories/IBackgroundTaskQueue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/Repositories/BackgroundTaskQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Login/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Login/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/Login.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Login.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="1b21f277-4d8f-4656-88b0-fa3f4aa0fc23" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698913652244</updated>
       <workItem from="1698913653945" duration="82000" />
-      <workItem from="1698999511655" duration="1167000" />
+      <workItem from="1698999511655" duration="1222000" />
     </task>
     <servers />
   </component>

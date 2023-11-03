@@ -11,6 +11,7 @@ namespace Login.Repositories;
 public class UserRepository : IUserRepository
 {
     private readonly LoginContext _authContext;
+    private User? _authenticatedUser;
 
     public UserRepository(LoginContext authContext)
     {
@@ -45,7 +46,8 @@ public class UserRepository : IUserRepository
         await _authContext.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task<(List<UserInfo>, int)> GetUsers(QueryParameter parameter, CancellationToken cancellationToken = default)
+    public async Task<(List<UserInfo>, int)> GetUsers(QueryParameter parameter,
+        CancellationToken cancellationToken = default)
     {
         var queryableUser = _authContext.Users!.AsQueryable();
 
@@ -68,5 +70,15 @@ public class UserRepository : IUserRepository
         await _authContext.Users!.AddAsync(user, cancellationToken);
         await _authContext.SaveChangesAsync(cancellationToken);
         return GetUserByUsername(user.Username, cancellationToken).Result!.ToUserInfo();
+    }
+
+    public async Task SetAuthenticatedUser(Guid id)
+    {
+        _authenticatedUser = await _authContext.Users!.FirstAsync(user => user.Id == id);
+    }
+
+    public User GetAuthenticatedUser()
+    {
+        return _authenticatedUser!;
     }
 }

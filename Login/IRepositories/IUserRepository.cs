@@ -13,4 +13,6 @@ public interface IUserRepository
     Task<(List<UserInfo>, int)> GetUsers(QueryParameter parameter, CancellationToken cancellationToken = default);
     void AddUserSync(User user);
     Task<UserInfo> AddUser(User user, CancellationToken cancellationToken = default);
+    Task SetAuthenticatedUser(Guid id);
+    User GetAuthenticatedUser();
 }

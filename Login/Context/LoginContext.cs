@@ -10,6 +10,7 @@ public class LoginContext : DbContext
 
     public DbSet<User>? Users { get; set; }
     public DbSet<UserLogin>? UserLogins { get; set; }
+    public DbSet<FileSheet> FileSheets { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
