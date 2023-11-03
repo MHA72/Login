@@ -10,10 +10,16 @@ public sealed class CreateUserUseCase
 {
     private readonly PasswordHasher<User> _passwordHasher;
     private readonly IUserRepository _userRepository;
+    private readonly IBackgroundTaskQueue _queue;
+    private readonly IDriveService _driveService;
 
-    public CreateUserUseCase(IUserRepository userRepository)
+
+
+    public CreateUserUseCase(IUserRepository userRepository, IBackgroundTaskQueue queue, IDriveService driveService)
     {
         _userRepository = userRepository;
+        _queue = queue;
+        _driveService = driveService;
         _passwordHasher = new PasswordHasher<User>();
     }
 
@@ -23,7 +29,14 @@ public sealed class CreateUserUseCase
 
         var hashedPassword = _passwordHasher.HashPassword(creatingUser, request.Password);
         creatingUser.PasswordHash = hashedPassword;
+        
+        var userInfo = await _userRepository.AddUser(creatingUser, cancellationToken);
+        
+        _queue.QueueBackgroundWorkItem(async token =>
+        {
+            await _driveService.CreateSheet(userInfo.Id, userInfo.Email, userInfo.Username, token);
+        });
 
-        return await _userRepository.AddUser(creatingUser, cancellationToken);
+        return userInfo;
     }
 }

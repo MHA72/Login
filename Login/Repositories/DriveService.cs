@@ -7,7 +7,6 @@ using Google.Apis.Util.Store;
 using Login.Context;
 using Login.IRepositories;
 using Login.Models.User;
-using SpreadSheet.Services;
 using File = Google.Apis.Drive.v3.Data.File;
 
 namespace Login.Repositories;
@@ -91,11 +90,11 @@ public class DriveService : IDriveService
         return file;
     }
 
-    public async Task CreateSheet(Guid userId, string email, string name, CancellationToken cancellationToken)
+    public async Task CreateSheet(Guid userId, string email, string userName, CancellationToken cancellationToken)
     {
         var service = GetService();
         var _parent = "12unHAQHkNnnxE60dI5qnyndGcW4osgEV"; //ID of folder if you want to create spreadsheet in specific folder
-        var filename = name;
+        var filename = userName;
         var fileMetadata = new File
         {
             Name = filename,
