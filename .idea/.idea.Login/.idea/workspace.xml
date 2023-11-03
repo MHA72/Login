@@ -10,8 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b21f277-4d8f-4656-88b0-fa3f4aa0fc23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Login/IRepositories/IBackgroundTaskQueue.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Login/Repositories/BackgroundTaskQueue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Login/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Login/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Login.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Login.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,8 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   },
@@ -111,6 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698913652244</updated>
       <workItem from="1698913653945" duration="82000" />
+      <workItem from="1698999511655" duration="1167000" />
     </task>
     <servers />
   </component>
@@ -120,24 +126,5 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Login/Extensions/AuthenticationExtensions.cs</url>
-          <line>9</line>
-          <properties documentPath="C:\Users\ParsM\Desktop\MyProject\Login\Login\Extensions\AuthenticationExtensions.cs" initialLine="9" containingFunctionPresentation="Method 'AddAuth'">
-            <startOffsets>
-              <option value="309" />
-            </startOffsets>
-            <endOffsets>
-              <option value="310" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
