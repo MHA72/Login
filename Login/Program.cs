@@ -18,6 +18,7 @@ builder.Services.AddScoped<CreateUserUseCase>();
 builder.Services.AddScoped<GetUsersUseCase>();
 builder.Services.AddScoped<LoginUseCase>();
 builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+builder.Services.AddHostedService<QueuedHostedService>();
 
 builder.Services.AddControllers();
 builder.Services.AddSwagger();
