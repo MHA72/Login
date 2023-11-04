@@ -11,11 +11,13 @@ var configuration = builder.Configuration;
 builder.Services.AddDbContext<LoginContext>(options => options.UseSqlite(configuration.GetConnectionString("sqlite")));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-
+builder.Services.AddScoped<IDriveService, DriveService>();
+builder.Services.AddScoped<ISheetService, SheetService>();
 builder.Services.AddScoped<GetUserByUsernameUseCase>();
 builder.Services.AddScoped<CreateUserUseCase>();
 builder.Services.AddScoped<GetUsersUseCase>();
 builder.Services.AddScoped<LoginUseCase>();
+builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
 
 builder.Services.AddControllers();
 builder.Services.AddSwagger();

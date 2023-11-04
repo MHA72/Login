@@ -6,10 +6,9 @@ namespace Login.Models.User
         {
         }
 
-        public Guid FileSheetId { get; set; }
         public string FileId { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; }
         public Guid UserId { get; set; }
-        public List<string> SheetNames { get; set; }
+        public ICollection<Sheet>? SheetNames { get; set; }
     }
 }

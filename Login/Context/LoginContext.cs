@@ -10,12 +10,15 @@ public class LoginContext : DbContext
 
     public DbSet<User>? Users { get; set; }
     public DbSet<UserLogin>? UserLogins { get; set; }
-    public DbSet<FileSheet> FileSheets { get; set; }
+    public DbSet<FileSheet>? FileSheets { get; set; }
+    public DbSet<Sheet>? Sheets { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new UserLoginConfiguration());
+        modelBuilder.ApplyConfiguration(new FileSheetConfiguration());
+        modelBuilder.ApplyConfiguration(new SheetConfiguration());
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
     }
 }

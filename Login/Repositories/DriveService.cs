@@ -147,9 +147,13 @@ public class DriveService : IDriveService
         {
             UserId = userId,
             FileId = file.Id,
-            SheetNames = new List<string>
+            SheetNames = new List<Sheet>()
             {
-                "MHA"
+                new Sheet
+                {
+                    SheetId = "",
+                    SheetName = "MHA"
+                }
             }
         };
 
