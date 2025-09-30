@@ -10,20 +10,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b21f277-4d8f-4656-88b0-fa3f4aa0fc23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Login/IRepositories/IBackgroundTaskQueue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Login/Repositories/BackgroundTaskQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Login/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Login/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Login/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Login/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/Login.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Login.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Context/LoginContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Context/LoginContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Migrations/LoginContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Migrations/LoginContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/MyDatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/Login/MyDatabase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/MyDatabase.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/MyDatabase.db-wal" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MHA72"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:MHA72/Login.git",
+    "accountId": "f8987fb5-ee14-476e-8bc5-261cff9957d3"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8315e670e046c0ebe36758d070aca06969b6edcb165895cc188daab9c6321eb7/UserLoginInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -32,7 +49,6 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2Xc1egGgFpeZ9fHa8WrfaLMvRoZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -42,22 +58,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.Login: http.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\ParsM\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\ParsM\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\ParsM\\AppData\\Local\\Symbols\\src"
-    ]
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Login: http">
@@ -117,6 +129,7 @@
       <updated>1698913652244</updated>
       <workItem from="1698913653945" duration="82000" />
       <workItem from="1698999511655" duration="1167000" />
+      <workItem from="1759214339439" duration="6569000" />
     </task>
     <servers />
   </component>
@@ -124,7 +137,39 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Login/Context/LoginContext.cs</url>
+          <line>35</line>
+          <properties documentPath="C:\Users\ASUS\Login\Login\Context\LoginContext.cs" containingFunctionPresentation="Method 'OnModelCreating'">
+            <startOffsets>
+              <option value="1689" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1690" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
