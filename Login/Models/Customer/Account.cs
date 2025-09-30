@@ -2,9 +2,7 @@
 
 public class Account : BaseEntity
 {
-    public Customer? Customer { get; set; }
-    public Guid CustomerId { get; set; }
+    public string CustomerNumber { get; set; }
+    public string AccountNumber { get; set; }
     public decimal Amount { get; set; }
-    public Guid AverageAccountId { get; set; }
-    public AverageAccount? AverageAccount { get; set; }
 }

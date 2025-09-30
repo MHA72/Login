@@ -16,16 +16,5 @@ public sealed class AccountConfiguration : IEntityTypeConfiguration<Models.Custo
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
         builder.Property(user => user.InsertTime)
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
-        
-        builder.HasOne(customer => customer.Customer)
-            .WithMany()
-            .HasForeignKey(customer => customer.CustomerId)
-            .IsRequired();  
-        
-        builder.HasOne(customer => customer.AverageAccount)
-            .WithMany()
-            .HasForeignKey(customer => customer.AverageAccountId)
-            .IsRequired();
-
     }
 }

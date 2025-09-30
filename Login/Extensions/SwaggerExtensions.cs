@@ -11,7 +11,7 @@ public static class SwaggerExtensions
             options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Version = "v1",
-                Title = "LoginJWT",
+                Title = "JWT",
                 Contact = new OpenApiContact
                 {
                     Name = "Mohammad Hossein Arabbagheri",

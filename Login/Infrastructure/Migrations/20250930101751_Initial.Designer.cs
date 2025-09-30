@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Login.Infrastructure.Migrations
 {
     [DbContext(typeof(LoginContext))]
-    [Migration("20250930082755_AddModel")]
-    partial class AddModel
+    [Migration("20250930101751_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,14 +26,16 @@ namespace Login.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("AccountNumber")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<decimal>("Amount")
                         .HasPrecision(18, 2)
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("AverageAccountId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("CustomerId")
+                    b.Property<string>("CustomerNumber")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("InsertTime")
@@ -46,10 +48,6 @@ namespace Login.Infrastructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AverageAccountId");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Accounts");
                 });
@@ -76,7 +74,7 @@ namespace Login.Infrastructure.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("AccountId")
+                    b.Property<string>("AccountNumber")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("InsertTime")
@@ -89,8 +87,6 @@ namespace Login.Infrastructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AccountId");
 
                     b.ToTable("AverageAccounts");
                 });
@@ -116,7 +112,7 @@ namespace Login.Infrastructure.Migrations
                     b.Property<int>("ChequeStatus")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("CustomerId")
+                    b.Property<string>("CustomerNumber")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("InsertTime")
@@ -129,8 +125,6 @@ namespace Login.Infrastructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Cheques");
                 });
@@ -149,7 +143,7 @@ namespace Login.Infrastructure.Migrations
                     b.Property<int>("ContractStatus")
                         .HasColumnType("INTEGER");
 
-                    b.Property<Guid>("CustomerId")
+                    b.Property<string>("CustomerNumber")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("FirstDueDate")
@@ -177,18 +171,13 @@ namespace Login.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("Contract");
+                    b.ToTable("Contracts");
                 });
 
             modelBuilder.Entity("Login.Models.Customer.Customer", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("AccountId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CustomerNumber")
@@ -217,8 +206,6 @@ namespace Login.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccountId");
-
                     b.ToTable("Customers");
                 });
 
@@ -232,7 +219,7 @@ namespace Login.Infrastructure.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CustomerId")
+                    b.Property<string>("CustomerNumber")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("InsertTime")
@@ -246,8 +233,6 @@ namespace Login.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
-
                     b.ToTable("FinancialInformations");
                 });
 
@@ -257,7 +242,7 @@ namespace Login.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("ContractId")
+                    b.Property<string>("ContractNumber")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("InsertTime")
@@ -274,8 +259,6 @@ namespace Login.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContractId");
-
                     b.ToTable("MonthlyPayments");
                 });
 
@@ -285,7 +268,7 @@ namespace Login.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("AccountId")
+                    b.Property<string>("AccountNumber")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Amount")
@@ -305,8 +288,6 @@ namespace Login.Infrastructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AccountId");
 
                     b.ToTable("TransactionAccounts");
                 });
@@ -373,102 +354,6 @@ namespace Login.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("UserLogins");
-                });
-
-            modelBuilder.Entity("Login.Models.Customer.Account", b =>
-                {
-                    b.HasOne("Login.Models.Customer.AverageAccount", "AverageAccount")
-                        .WithMany()
-                        .HasForeignKey("AverageAccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Login.Models.Customer.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AverageAccount");
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("Login.Models.Customer.AverageAccount", b =>
-                {
-                    b.HasOne("Login.Models.Customer.Account", "Account")
-                        .WithMany()
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Account");
-                });
-
-            modelBuilder.Entity("Login.Models.Customer.Cheque", b =>
-                {
-                    b.HasOne("Login.Models.Customer.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("Login.Models.Customer.Contract", b =>
-                {
-                    b.HasOne("Login.Models.Customer.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("Login.Models.Customer.Customer", b =>
-                {
-                    b.HasOne("Login.Models.Customer.Account", "Account")
-                        .WithMany()
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Account");
-                });
-
-            modelBuilder.Entity("Login.Models.Customer.FinancialInformation", b =>
-                {
-                    b.HasOne("Login.Models.Customer.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("Login.Models.Customer.MonthlyPayment", b =>
-                {
-                    b.HasOne("Login.Models.Customer.Contract", "Contract")
-                        .WithMany()
-                        .HasForeignKey("ContractId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Contract");
-                });
-
-            modelBuilder.Entity("Login.Models.Customer.TransactionAccount", b =>
-                {
-                    b.HasOne("Login.Models.Customer.Account", "Account")
-                        .WithMany()
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Account");
                 });
 
             modelBuilder.Entity("Login.Models.User.UserLogin", b =>

@@ -19,10 +19,5 @@ public sealed class ChequeConfiguration : IEntityTypeConfiguration<Models.Custom
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
         builder.Property(cheque => cheque.ChequeDueDate)
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
-
-        builder.HasOne(cheque => cheque.Customer)
-            .WithMany()
-            .HasForeignKey(cheque => cheque.CustomerId)
-            .IsRequired();
     }
 }

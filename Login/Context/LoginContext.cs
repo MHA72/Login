@@ -19,6 +19,7 @@ public class LoginContext : DbContext
     public DbSet<MonthlyPayment>? MonthlyPayments { get; set; }
     public DbSet<TransactionAccount>? TransactionAccounts { get; set; }
     public DbSet<FinancialInformation>? FinancialInformations { get; set; }
+    public DbSet<Contract>? Contracts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

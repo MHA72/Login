@@ -23,11 +23,5 @@ public sealed class ContractConfiguration : IEntityTypeConfiguration<Models.Cust
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
         builder.Property(user => user.LastDueDate)
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
-        
-        builder.HasOne(customer => customer.Customer)
-            .WithMany()
-            .HasForeignKey(customer => customer.CustomerId)
-            .IsRequired();
-
     }
 }

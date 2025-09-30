@@ -16,10 +16,5 @@ public sealed class MonthlyPaymentConfiguration : IEntityTypeConfiguration<Model
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
         builder.Property(user => user.PaymentDate)
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
-
-        builder.HasOne(customer => customer.Contract)
-            .WithMany()
-            .HasForeignKey(customer => customer.ContractId)
-            .IsRequired();
     }
 }

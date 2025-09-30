@@ -2,6 +2,7 @@ using Login.Application;
 using Login.Context;
 using Login.Extensions;
 using Login.IRepositories;
+using Login.Models;
 using Login.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +28,8 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<LoginContext>();
     db.Database.Migrate();
+    db.Database.EnsureCreated();
+    await DatabaseSeeder.SeedAsync(db);
 }
 
 app.UseSwagger();

@@ -2,7 +2,6 @@
 
 public class MonthlyPayment : BaseEntity
 {
-    public Guid ContractId { get; set; }
-    public Contract? Contract { get; set; }
+    public string? ContractNumber { get; set; }
     public DateTime PaymentDate { get; set; }
 }

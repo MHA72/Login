@@ -16,10 +16,5 @@ public sealed class FinancialInformationConfiguration : IEntityTypeConfiguration
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
         builder.Property(user => user.InsertTime)
             .HasConversion(time => time.ToUniversalTime(), time => time.ToUniversalTime());
-        
-        builder.HasOne(customer => customer.Customer)
-            .WithMany()
-            .HasForeignKey(customer => customer.CustomerId)
-            .IsRequired();
     }
 }
